@@ -1,6 +1,6 @@
 /* Export default ExpenseItem; */
 
-.expense-item{
+.expense-date{
     display : flex;
     justify-content: space-between;
     align-items: center;
@@ -29,12 +29,16 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    padding: 1.5rem;
+    padding: 2rem;
     margin: 1rem 1rem;
-    background-color: rgb(119, 117, 176);
+    background-color: rgb(249, 15, 179);
     border-radius: 12px;
-    border-color: blue;
+    border-color: rgb(78, 2, 52);
+    border-style: solid;
 
+}
+.main{
+    text-align: center;
 }
 
 .expense-item_location{
@@ -57,7 +61,7 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     padding: 0.5rem;
     margin: 1rem 0;
-    background-color: aquamarine;
+    background-color: rgb(143, 144, 144);
     border-radius: 12px;
     border-color: black;
 }

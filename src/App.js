@@ -11,9 +11,9 @@ function App() {
   ];
 
   return (
-    <div>
-      <h2>This is Ankita</h2>
-      <p>Hello , Welcome</p>
+    <div className='main'>
+      {/* <h2>This is Ankita</h2>
+      <p>Hello , Welcome</p> */}
       <h2>Expense Item !</h2>
       {/* for(let i=0; i<expense.length; i++){
         <ExpenseItem 

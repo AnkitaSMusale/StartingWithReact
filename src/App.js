@@ -15,7 +15,15 @@ function App() {
       <h2>This is Ankita</h2>
       <p>Hello , Welcome</p>
       <h2>Expense Item !</h2>
-      <ExpenseItem 
+      {/* for(let i=0; i<expense.length; i++){
+        <ExpenseItem 
+        descr = {expense[i].descr}
+        date = {expense[i].date}
+        price = {expense[i].price}
+        expenditurelocation = {expense[i].expenditurelocation}
+        ></ExpenseItem>
+      } */}
+       <ExpenseItem 
         descr = {expense[0].descr}
         date = {expense[0].date}
         price = {expense[0].price}
@@ -38,7 +46,7 @@ function App() {
         date = {expense[3].date}
         price = {expense[3].price}
         expenditurelocation = {expense[3].expenditurelocation}
-      ></ExpenseItem>
+    ></ExpenseItem>
     </div>
     
   );

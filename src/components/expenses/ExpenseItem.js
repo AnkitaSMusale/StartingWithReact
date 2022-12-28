@@ -2,7 +2,7 @@ import './ExpenseItem.css';
 import ExpenseDate from './ExpenseDate';
 import ExpenseDetail from './ExpenseDetail';
 
-function ExpenseItem(props){
+const ExpenseItem = (props) =>{
     // const expensedate = new Date(2022, 12, 28);
     // const descr = 'petrol';
     // const expenditurelocation = 'pune';

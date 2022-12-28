@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import ExpenseItem  from './components/ExpenseItem';
+import ExpenseItem  from './components/xpenses/ExpenseItem';
 
-function App() {
+const App = () => {
   const expense = [
     {id: '01', descr:'petrol',date : new Date(2022,12,28), price : 200 , expenditurelocation:'pune'},
     {id: '02', descr:'pizza',date : new Date(2022,12,29), price : 300, expenditurelocation:'mumbai'},

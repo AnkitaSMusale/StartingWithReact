@@ -6,7 +6,6 @@ function ExpenseItem(){
     const expenditurelocation = 'pune';
     const price = 200;
     return (
-        
         <div className='expenses'>
             <div className='expense-item'><h3>{expensedate.toISOString()}</h3></div>
             <div className='expense-item_description'><h3>{descr}</h3></div>

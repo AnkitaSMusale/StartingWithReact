@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import ExpenseItem  from './components/xpenses/ExpenseItem';
+import ExpenseItem  from './components/expenses/ExpenseItem';
 
 const App = () => {
   const expense = [

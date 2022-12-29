@@ -1,18 +1,22 @@
 .expense-date{
     display : flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); 
     padding: 1rem;
-    margin: 1rem 0;
+    margin: 0.5rem 0.5rem;
     background-color: rgb(7, 7, 7);
     color: white;
     border-radius: 12px;
     border-color: rgb(56, 56, 56);
-    font-weight: 700;
+    font-weight: 300;
     text-align: center;
     border-color: white;
     border-style: solid;
+    box-sizing: border-box;
+    /* width: 10%;
+    height: 10%; */
+    /* margin-left: 2rem; */
 }
 
 .day{

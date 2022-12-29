@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import ExpenseItem  from './components/expenses/ExpenseItem';
-
+import AddNEwExpense from './components/AddExpense/AddNewExpense';
 const App = () => {
   const expense = [
     {id: '01', descr:'petrol',date : new Date(2022,12,28), price : 200 , expenditurelocation:'pune'},
@@ -14,6 +14,7 @@ const App = () => {
     <div className='main'>
       {/* <h2>This is Ankita</h2>
       <p>Hello , Welcome</p> */}
+      <AddNEwExpense></AddNEwExpense>
       <h2>Expense Item !</h2>
       {/* for(let i=0; i<expense.length; i++){
         <ExpenseItem 

@@ -3,7 +3,7 @@
     text-align: center;
     background-color: rgb(173, 174, 173);
 } 
-/* .expenses{
+.expenses{
     display : flex; 
     justify-content: space-between;
     align-items: center;
@@ -15,4 +15,4 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     border-color: black;
    
-} */
+}

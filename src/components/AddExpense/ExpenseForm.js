@@ -1,9 +1,24 @@
 //Expense title, Expense Amount and Date.
+import React, { useState } from 'react';
 
 const ExpenseForm = () => {
 
-    const AddChangeHandler = (e) => {
-        console.log(e.target.value)
+    const [enterredTitle, setEnteredTitle] = useState('');
+    const [enterredPrice, setEnteredPrice] = useState('');
+    const [enterredDate, setEnteredDate] = useState('');
+
+    const TitleChangeHandler = (e) => {
+        setEnteredTitle(e.target.value)
+        //console.log('Changed')
+    }
+
+    const PriceChangeHandler = (e) => {
+        setEnteredPrice(e.target.value)
+        //console.log('Changed')
+    }
+    
+    const DateChangeHandler = (e) => {
+        setEnteredDate(e.target.value)
         //console.log('Changed')
     }
     return (
@@ -11,15 +26,15 @@ const ExpenseForm = () => {
             <div className="add-data">
                 <div className="add-descr">
                     <label>Add descr :</label>
-                    <input type='text' onChange={AddChangeHandler}></input>
+                    <input type='text' onChange={TitleChangeHandler}></input>
                 </div>
                 <div className="add-price">
                     <label>Add price :</label>
-                    <input type='number' onChange={AddChangeHandler}></input>
+                    <input type='number' onChange={PriceChangeHandler}></input>
                 </div>
                 <div className="add-date">
                     <label>Add Date :</label>
-                    <input type='date' onChange={AddChangeHandler}></input>
+                    <input type='date' onChange={DateChangeHandler}></input>
                 </div>
             </div>
             <div className="Addbutton">

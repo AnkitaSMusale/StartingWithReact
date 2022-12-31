@@ -1,7 +1,7 @@
 //Expense title, Expense Amount and Date.
 import React, { useState } from 'react';
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
 
     const [enterredTitle, setEnteredTitle] = useState('');
     const [enterredPrice, setEnteredPrice] = useState('');
@@ -54,7 +54,8 @@ const ExpenseForm = () => {
             Price : enterredPrice,
             Date : new Date(enterredDate)
         }
-        console.log(ExpenseData);
+        //console.log(ExpenseData);
+        props.onSaveExpenseData(ExpenseData)
         setEnteredTitle('');
         setEnteredPrice('');
         setEnteredDate('');

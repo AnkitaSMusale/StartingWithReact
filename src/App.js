@@ -10,20 +10,14 @@ const App = () => {
     {id: '04',descr:'book',date : new Date(2022,12,31), price : 500, expenditurelocation:'solapur'}
   ];
 
+  const addExpenseHandler = (expense) => {
+    console.log(expense)
+  }
+
   return (
     <div className='main'>
-      {/* <h2>This is Ankita</h2>
-      <p>Hello , Welcome</p> */}
-      <AddNEwExpense></AddNEwExpense>
+      <AddNEwExpense onAddExpense ={addExpenseHandler}></AddNEwExpense>
       <h2>Expense Item !</h2>
-      {/* for(let i=0; i<expense.length; i++){
-        <ExpenseItem 
-        descr = {expense[i].descr}
-        date = {expense[i].date}
-        price = {expense[i].price}
-        expenditurelocation = {expense[i].expenditurelocation}
-        ></ExpenseItem>
-      } */}
        <ExpenseItem 
         descr = {expense[0].descr}
         date = {expense[0].date}
@@ -48,6 +42,14 @@ const App = () => {
         price = {expense[3].price}
         expenditurelocation = {expense[3].expenditurelocation}
     ></ExpenseItem>
+    {/* for(let i=0; i<expense.length; i++){
+        <ExpenseItem 
+        descr = {expense[i].descr}
+        date = {expense[i].date}
+        price = {expense[i].price}
+        expenditurelocation = {expense[i].expenditurelocation}
+        ></ExpenseItem>
+      } */}
     </div>
     
   );

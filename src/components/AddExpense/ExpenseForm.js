@@ -54,7 +54,10 @@ const ExpenseForm = () => {
             Price : enterredPrice,
             Date : new Date(enterredDate)
         }
-        console.log(ExpenseData)
+        console.log(ExpenseData);
+        setEnteredTitle('');
+        setEnteredPrice('');
+        setEnteredDate('');
     }
 
     return (
@@ -62,15 +65,15 @@ const ExpenseForm = () => {
             <div className="add-data">
                 <div className="add-descr">
                     <label>Add descr :</label>
-                    <input type='text' onChange={TitleChangeHandler}></input>
+                    <input type='text' value={enterredTitle} onChange={TitleChangeHandler}></input>
                 </div>
                 <div className="add-price">
                     <label>Add price :</label>
-                    <input type='number' onChange={PriceChangeHandler}></input>
+                    <input type='number' value={enterredPrice} onChange={PriceChangeHandler}></input>
                 </div>
                 <div className="add-date">
                     <label>Add Date :</label>
-                    <input type='date' onChange={DateChangeHandler}></input>
+                    <input type='date' value={enterredDate} onChange={DateChangeHandler}></input>
                 </div>
             </div>
             <div className="Addbutton">

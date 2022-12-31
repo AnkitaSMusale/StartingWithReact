@@ -3,50 +3,62 @@ import React, { useState } from 'react';
 
 const ExpenseForm = () => {
 
-    // const [enterredTitle, setEnteredTitle] = useState('');
-    // const [enterredPrice, setEnteredPrice] = useState('');
-    // const [enterredDate, setEnteredDate] = useState('');
+    const [enterredTitle, setEnteredTitle] = useState('');
+    const [enterredPrice, setEnteredPrice] = useState('');
+    const [enterredDate, setEnteredDate] = useState('');
 
-    const [userInput, setUserInput] = useState({
-        enteredDate : '',
-        enteredPrice: '',
-        enteredTitle: ''
-    })
+    // const [userInput, setUserInput] = useState({
+    //     enteredDate : '',
+    //     enteredPrice: '',
+    //     enteredTitle: ''
+    // })
 
     const TitleChangeHandler = (e) => {
-        // setEnteredTitle(e.target.value)
+        setEnteredTitle(e.target.value)
         // setUserInput({
         //     ...userInput,
         //     enteredTitle : e.target.value
         // })
-        setUserInput((prevState) => {
-            return{ ...prevState, enteredTitle : e.target.value}
-        })
+        // setUserInput((prevState) => {
+        //     return{ ...prevState, enteredTitle : e.target.value}
+        // })
     }
 
     const PriceChangeHandler = (e) => {
-        //setEnteredPrice(e.target.value)
+        setEnteredPrice(e.target.value)
         // setUserInput({
         //     ...userInput,
         //     enteredPrice : e.target.value
         // })
-        setUserInput((prevState) => {
-            return{ ...prevState, enteredPrice : e.target.value}
-        })
+        // setUserInput((prevState) => {
+        //     return{ ...prevState, enteredPrice : e.target.value}
+        // })
     }
     
     const DateChangeHandler = (e) => {
-        //setEnteredDate(e.target.value)
+        setEnteredDate(e.target.value)
         // setUserInput({
         //     ...userInput,
         //     enteredDate : e.target.value
         // })
-        setUserInput((prevState) => {
-            return{ ...prevState, enteredDate : e.target.value}
-        })
+        // setUserInput((prevState) => {
+        //     return{ ...prevState, enteredDate : e.target.value}
+        // })
+        
     }
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        const ExpenseData = {
+            title : enterredTitle,
+            Price : enterredPrice,
+            Date : new Date(enterredDate)
+        }
+        console.log(ExpenseData)
+    }
+
     return (
-        <form>
+        <form onSubmit={submitHandler}>
             <div className="add-data">
                 <div className="add-descr">
                     <label>Add descr :</label>

@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import './ExpenseItem.css';
 import ExpenseDate from './ExpenseDate';
 import ExpenseDetail from './ExpenseDetail';
-
 import Card from '../UI/Card';
 
 const ExpenseItem = (props) =>{
@@ -29,6 +28,7 @@ const ExpenseItem = (props) =>{
 
     return (
         <Card className='expenses'>
+            
             <ExpenseDate date={props.date}></ExpenseDate>
             <h2>{descr}</h2> 
             {/* expenditurelocation={props.expenditurelocation}  */}

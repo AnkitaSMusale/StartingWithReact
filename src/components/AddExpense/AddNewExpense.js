@@ -21,6 +21,3 @@ const AddNEwExpense = (props) => {
 }
 
 export default AddNEwExpense;
-
-//Can you tell the exact flow of data from ExpenseForm component
-// to Expense Component as per the trainer

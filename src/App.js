@@ -1,7 +1,8 @@
 // import logo from './logo.svg';
 import './App.css';
-import ExpenseItem  from './components/expenses/ExpenseItem';
+//import ExpenseItem  from './components/expenses/ExpenseItem';
 import AddNEwExpense from './components/AddExpense/AddNewExpense';
+import Expenses from './components/expenses/expenses';
 const App = () => {
   const expense = [
     {id: '01', descr:'petrol',date : new Date(2022,12,28), price : 200 , expenditurelocation:'pune'},
@@ -12,13 +13,24 @@ const App = () => {
 
   const addExpenseHandler = (expense) => {
     console.log(expense)
+      
   }
+
+  // const addItemHandler = (expense) => {
+  //   const data = {
+  //     ...expense
+  //   }
+  //   console.log(data)
+      
+  // }
 
   return (
     <div className='main'>
       <AddNEwExpense onAddExpense ={addExpenseHandler}></AddNEwExpense>
+      {/* <ExpenseFilter selected={filteredYear} onChangeFilter={filterChangeHandler}></ExpenseFilter> */}
       <h2>Expense Item !</h2>
-       <ExpenseItem 
+      <Expenses items={expense}></Expenses>
+      {/* <ExpenseItem 
         descr = {expense[0].descr}
         date = {expense[0].date}
         price = {expense[0].price}
@@ -41,7 +53,7 @@ const App = () => {
         date = {expense[3].date}
         price = {expense[3].price}
         expenditurelocation = {expense[3].expenditurelocation}
-    ></ExpenseItem>
+    ></ExpenseItem> */}
     {/* for(let i=0; i<expense.length; i++){
         <ExpenseItem 
         descr = {expense[i].descr}

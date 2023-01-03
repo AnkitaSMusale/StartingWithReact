@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import ExpenseItem from './ExpenseItem';
 import ExpensesFilter from './ExpenseFilter';
+import ExpenseList from './ExpenseList';
 //import ExpenseDate from './ExpenseDate';
 
 const Expenses = (props) => {
@@ -19,7 +19,8 @@ const Expenses = (props) => {
     return(
         <div>
           <ExpensesFilter selectedYear={filteredYear} onYearSelect={yearSelectHandler} />
-          {FilteredExpense.length === 0 && <p>No data found !!</p>}
+          <ExpenseList items={FilteredExpense}></ExpenseList>
+          {/* {FilteredExpense.length === 0 && <p>No data found !!</p>}
           {FilteredExpense.length > 0 && 
           FilteredExpense.map((expense) => (
             <ExpenseItem 
@@ -42,7 +43,7 @@ const Expenses = (props) => {
           <p>Only Single Item Found ! Please add more items </p>
           }
 
-        
+         */}
         </div>
     )
 

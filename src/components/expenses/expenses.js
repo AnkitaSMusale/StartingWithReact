@@ -5,25 +5,15 @@ import ExpenseItem from './ExpenseItem';
 
 const Expenses = (props) => {
 
-    // const SaveExpenseData = (enteredData) => {
-    //     const  expenseData= {
-    //         ...enteredData,
-    //         id : Math.random().toString()
-    //     };
-    //     //console.log(expenseData);
-    //     props.onAddExpense(expenseData)
-    // }
-//<ExpenseDate date={props.date}></ExpenseDate>
-
     return(
         <div>
           {props.items.map((expense) => (
             <ExpenseItem 
+            key={expense.id}
             descr = {expense.descr}
             date = {expense.date}
             price = {expense.price}
-            >
-            </ExpenseItem>
+            />
           ))
           }
           {/* <ExpenseItem 

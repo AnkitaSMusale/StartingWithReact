@@ -1,20 +1,24 @@
-// import logo from './logo.svg';
+import React, { useState } from 'react';
+
 import './App.css';
 //import ExpenseItem  from './components/expenses/ExpenseItem';
 import AddNEwExpense from './components/AddExpense/AddNewExpense';
 import Expenses from './components/expenses/expenses';
+
+const Dummy_Expenses = [
+  {id: '01', descr:'petrol',date:new Date(2022,12,28), price : 200 , expenditurelocation:'pune'},
+  {id: '02', descr:'pizza',date : new Date(2022,12,29), price : 300, expenditurelocation:'mumbai'},
+  {id: '03', descr:'flower',date : new Date(2022,12,30), price : 400, expenditurelocation:'bangalore'},
+  {id: '04',descr:'book',date : new Date(2022,12,31), price : 500, expenditurelocation:'solapur'}
+];
+
 const App = () => {
-  const expense = [
-    {id: '01', descr:'petrol',date : new Date(2022,12,28), price : 200 , expenditurelocation:'pune'},
-    {id: '02', descr:'pizza',date : new Date(2022,12,29), price : 300, expenditurelocation:'mumbai'},
-    {id: '03', descr:'flower',date : new Date(2022,12,30), price : 400, expenditurelocation:'bangalore'},
-    {id: '04',descr:'book',date : new Date(2022,12,31), price : 500, expenditurelocation:'solapur'}
-  ];
+  const [expenses, setExpenses] = useState(Dummy_Expenses);   //Destructing
 
   const addExpenseHandler = (expense) => {
-    console.log(expense)
-      
+     setExpenses(prevExpenses => {  return [expense, ...prevExpenses]});
   }
+  
 
   // const addItemHandler = (expense) => {
   //   const data = {
@@ -29,7 +33,7 @@ const App = () => {
       <AddNEwExpense onAddExpense ={addExpenseHandler}></AddNEwExpense>
       {/* <ExpenseFilter selected={filteredYear} onChangeFilter={filterChangeHandler}></ExpenseFilter> */}
       <h2>Expense Item !</h2>
-      <Expenses items={expense}></Expenses>
+      <Expenses items={expenses}></Expenses>
       {/* <ExpenseItem 
         descr = {expense[0].descr}
         date = {expense[0].date}

@@ -7,6 +7,8 @@ const ExpenseForm = (props) => {
     const [enterredPrice, setEnteredPrice] = useState('');
     const [enterredDate, setEnteredDate] = useState('');
 
+    const [showForm, setShowForm] = useState(false);
+
     // const [userInput, setUserInput] = useState({
     //     enteredDate : '',
     //     enteredPrice: '',
@@ -59,31 +61,80 @@ const ExpenseForm = (props) => {
         setEnteredTitle('');
         setEnteredPrice('');
         setEnteredDate('');
+        toggleShowForm()
     }
 
-    return (
-        <form onSubmit={submitHandler}>
-            <div className="add-data">
-                <div className="add-descr">
-                    <label>Add descr :</label>
-                    <input type='text' value={enterredTitle} onChange={TitleChangeHandler}></input>
-                </div>
-                <div className="add-price">
-                    <label>Add price :</label>
-                    <input type='number' value={enterredPrice} onChange={PriceChangeHandler}></input>
-                </div>
-                <div className="add-date">
-                    <label>Add Date :</label>
-                    <input type='date' value={enterredDate} onChange={DateChangeHandler}></input>
-                </div>
+    function toggleShowForm() {
+        setShowForm(prevValue => !prevValue)
+    }
+
+
+    if (!showForm) {
+        return (
+
+            <div style={{ textAlign: 'center' }}>
+
+            <button onClick={toggleShowForm}>Add New Expenses</button>
             </div>
-            <div className="Addbutton">
-                <button type='button' onClick={props.onCancel}>Cancel</button>
-                <button type="submit">Add Expense</button>
-            </div>
-        </form>
-    )
+
+
+        )
+    }
+
+
+    if (showForm) {
+        return (
+            <form onSubmit={submitHandler}>
+                <div className='new-expense__controls'>
+                    <div className='new-expense__control'>
+                        <label>Title</label>
+                        <input type='text' value={enterredTitle} onChange={TitleChangeHandler} />
+
+                    </div>
+                    <div className='new-expense__control'>
+                        <label>Amount</label>
+                        <input type='number' min='0.01' step='0.01' value={enterredPrice} onChange={PriceChangeHandler} />
+
+                    </div>
+
+                    <div className='new-expense__control'>
+                        <label>Date</label>
+                        <input type='date' min='2019-01-01' step='2022-12-31' value={enterredDate} onChange={DateChangeHandler} />
+
+                    </div>
+
+                </div>
+                <div className='new-expense__actions'>
+                    <button onClick={toggleShowForm}>Cancel</button>
+                    <button type='submit'>Add expense</button>
+                </div>
+            </form>
+        )
+    }
 }
+//     return (
+//         <form onSubmit={submitHandler}>
+//             <div className="add-data">
+//                 <div className="add-descr">
+//                     <label>Add descr :</label>
+//                     <input type='text' value={enterredTitle} onChange={TitleChangeHandler}></input>
+//                 </div>
+//                 <div className="add-price">
+//                     <label>Add price :</label>
+//                     <input type='number' value={enterredPrice} onChange={PriceChangeHandler}></input>
+//                 </div>
+//                 <div className="add-date">
+//                     <label>Add Date :</label>
+//                     <input type='date' value={enterredDate} onChange={DateChangeHandler}></input>
+//                 </div>
+//             </div>
+//             <div className="Addbutton">
+//                 <button type='button' onClick={props.onCancel}>Cancel</button>
+//                 <button type="submit">Add Expense</button>
+//             </div>
+//         </form>
+//     )
+// }
 
 export default ExpenseForm;
 

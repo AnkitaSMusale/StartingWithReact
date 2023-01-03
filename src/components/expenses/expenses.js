@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import ExpensesFilter from './ExpenseFilter';
 import ExpenseList from './ExpenseList';
+import ExpensesChart from './ExpenseChart';
 //import ExpenseDate from './ExpenseDate';
 
 const Expenses = (props) => {
@@ -19,6 +20,7 @@ const Expenses = (props) => {
     return(
         <div>
           <ExpensesFilter selectedYear={filteredYear} onYearSelect={yearSelectHandler} />
+          <ExpensesChart items={FilteredExpense}></ExpensesChart>
           <ExpenseList items={FilteredExpense}></ExpenseList>
           {/* {FilteredExpense.length === 0 && <p>No data found !!</p>}
           {FilteredExpense.length > 0 && 
